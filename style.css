@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #090d16 0%, #121d33 55%, #070a10 100%);
+  color: #f4f7fb;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+  padding: 32px 18px 60px;
+}
+
+/* Pantalla inicial */
+.overlay-inicio {
+  position: fixed;
+  inset: 0;
+  background-color: #070a10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+  padding: 20px;
+}
+
+.overlay-inicio.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tarjeta-inicio {
+  max-width: 600px;
+  padding: 28px 36px;
+  border: 1px solid #2b4162;
+  background-color: #0e1626;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.tarjeta-inicio p {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  color: #cbe0f0;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.tarjeta-inicio span {
+  font-size: 0.95rem;
+  color: #8fa9c4;
+}
+
+/* Estructura principal: 3 columnas centradas en escritorio */
+.escena-completa {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(150px, 240px) minmax(320px, 700px) minmax(150px, 240px);
+  gap: 28px;
+  align-items: start;
+  justify-items: center;
+}
+
+@media (min-width: 1051px) {
+  .escena-completa {
+    grid-template-columns: 220px minmax(420px, 720px) 220px;
+    justify-content: center;
+  }
+
+  .margen-fotos,
+  .columna-central {
+    width: 100%;
+  }
+}
+
+/* Márgenes laterales con 5 fotos cada uno */
+.margen-fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.foto-lateral {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #e6eff8;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+/* Inclinaciones chuecas del lado izquierdo */
+.chueca-izq-1 { transform: rotate(-4.5deg); }
+.chueca-izq-2 { transform: rotate(3.5deg) translateX(6px); }
+.chueca-izq-3 { transform: rotate(-3deg) translateX(-4px); }
+.chueca-izq-4 { transform: rotate(5deg) translateX(4px); }
+.chueca-izq-5 { transform: rotate(-4deg); }
+
+/* Inclinaciones chuecas del lado derecho */
+.chueca-der-1 { transform: rotate(4deg); }
+.chueca-der-2 { transform: rotate(-3.5deg) translateX(-6px); }
+.chueca-der-3 { transform: rotate(3deg) translateX(4px); }
+.chueca-der-4 { transform: rotate(-4.5deg) translateX(-4px); }
+.chueca-der-5 { transform: rotate(3.5deg); }
+
+.foto-lateral:hover {
+  transform: rotate(0deg) scale(1.05);
+  border-color: #8ecae6;
+  box-shadow: 0 16px 30px rgba(142, 202, 230, 0.22);
+  z-index: 5;
+}
+
+/* Columna central */
+.columna-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.contenedor {
+  width: 100%;
+  padding: 48px 28px;
+  background-color: #0d1524;
+  border: 1px solid #253854;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
+
+.mariposa-svg {
+  margin-bottom: 14px;
+  animation: aleteo 3.5s infinite ease-in-out;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #f4f7fb;
+  text-shadow: 2px 3px 0px #060911;
+}
+
+.subtitulo {
+  margin-top: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #a3c4dc;
+}
+
+/* Botones de selección de música */
+.controles-musica {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.btn-musica {
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid #456990;
+  background-color: #132238;
+  color: #e6f2fa;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-musica:hover {
+  transform: translateY(-2px);
+  border-color: #8ecae6;
+  background-color: #1b3150;
+}
+
+.btn-musica.activo {
+  background-color: #244775;
+  border-color: #8ecae6;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(142, 202, 230, 0.35);
+}
+
+/* Párrafo fuera del recuadro y fotos centrales */
+.zona-parrafo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.parrafo-abajo {
+  max-width: 640px;
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  line-height: 1.7;
+  color: #d7e6f2;
+  background-color: rgba(13, 21, 36, 0.78);
+  border: 1px solid rgba(59, 91, 134, 0.45);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+
+.foto-centro {
+  width: 100%;
+  max-width: 440px;
+  height: 260px;
+  margin-top: 22px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #e6eff8;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
+}
+
+.zona-parrafo .foto-centro {
+  margin-top: 0;
+}
+
+@keyframes aleteo {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-7px) scaleX(0.88); }
+}
+
+/* Pantallas medianas */
+@media (max-width: 1050px) {
+  .escena-completa {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  .margen-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+  }
+
+  .foto-lateral {
+    height: 120px;
+  }
+}
+
+/* Celulares */
+/* Celulares */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 14px 60px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .escena-completa {
+    width: 100%;
+    max-width: 100%;
+    gap: 22px;
+  }
+
+  .contenedor {
+    width: 100%;
+    padding: 32px 18px;
+    border-radius: 14px;
+  }
+
+  .subtitulo {
+    letter-spacing: 0.8px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .margen-fotos {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding-top: 0;
+  }
+
+  .foto-lateral {
+    height: 115px;
+  }
+
+  .chueca-izq-1, .chueca-izq-3, .chueca-izq-5,
+  .chueca-der-2, .chueca-der-4 {
+    transform: rotate(-2.5deg);
+  }
+
+  .chueca-izq-2, .chueca-izq-4,
+  .chueca-der-1, .chueca-der-3, .chueca-der-5 {
+    transform: rotate(2.5deg);
+  }
+
+  .zona-parrafo {
+    width: 100%;
+  }
+
+  .parrafo-abajo {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 0.98rem;
+  }
+
+  .foto-centro {
+    max-width: 100%;
+    height: 210px;
+  }
+}

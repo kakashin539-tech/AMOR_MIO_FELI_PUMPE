@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feli Pumpe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pantalla inicial de un solo toque para habilitar el sonido automático -->
+  <div id="pantallaInicio" class="overlay-inicio" role="button" tabindex="0">
+    <div class="tarjeta-inicio">
+      <p>Tienes una SORPRESAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+      <span>Toca la pantalla para abrir a la de yayaya en fa yayayyaya abre este coso jija de la wayaba</span>
+    </div>
+  </div>
+
+  <!-- Layout general: 5 fotos izquierda | centro + párrafo | 5 fotos derecha -->
+  <div class="escena-completa">
+
+    <!-- Margen izquierdo (5 fotos chuecas) -->
+    <aside class="margen-fotos margen-izq" aria-label="Fotos laterales izquierdas">
+      <img src="img/izq_1.jpeg" alt="Foto izquierda 1" class="foto-lateral chueca-izq-1">
+      <img src="img/izq_2.jpeg" alt="Foto izquierda 2" class="foto-lateral chueca-izq-2">
+      <img src="img/izq_3.png" alt="Foto izquierda 3" class="foto-lateral chueca-izq-3">
+      <img src="img/izq_4.jpeg" alt="Foto izquierda 4" class="foto-lateral chueca-izq-4">
+      <img src="img/izq_5.jpeg" alt="Foto izquierda 5" class="foto-lateral chueca-izq-5">
+    </aside>
+
+    <!-- Columna central: tarjeta principal + párrafo abajo -->
+    <div class="columna-central">
+      <main class="contenedor">
+        <!-- Mariposa SVG limpia en azul claro -->
+        <div class="mariposa-svg" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="54" height="54">
+            <path fill="#a3c4dc" d="M31 30C25 14 8 8 6 20c-2 10 10 15 22 15-10 2-18 9-14 17 4 7 15 1 17-12V30z"/>
+            <path fill="#cbe0f0" d="M33 30c6-16 23-22 25-10 2 10-10 15-22 15 10 2 18 9 14 17-4 7-15 1-17-12V30z"/>
+            <rect x="30.5" y="18" width="3" height="28" rx="1.5" fill="#1b2a41"/>
+          </svg>
+        </div>
+
+        <h1 id="tituloPrincipal">FELI PUMPE</h1>
+        <p class="subtitulo">
+          Q WAPA ESTÁ LA CUMPLEAÑERA KRAJO<br>
+          ya 19 añotes qepedo si yo te acompañé a sakar tu ine y k te viste pelleja saliendo de las oficinas y q te conocí a los 17 y y y y y yy quepedo mucho tiempo pero tan bonito todo jeje
+        </p>
+
+        <!-- Botones para elegir entre audio de broma (mus_jk) o canción aesthetic (mus_real) -->
+        <div class="controles-musica" aria-label="Selector de música">
+          <button type="button" id="btnMusJk" class="btn-musica btn-broma">
+            Rola de broma (mus_jk)
+          </button>
+          <button type="button" id="btnMusReal" class="btn-musica btn-aesthetic">
+            Rola aesthetic (mus_real)
+          </button>
+        </div>
+
+        <!-- Imagen debajo de la frase -->
+        <img src="img/centro_arriba.jpeg" alt="Foto central superior" class="foto-centro">
+      </main>
+
+      <!-- Párrafo fuera del recuadro -->
+      <section class="zona-parrafo">
+        <p class="parrafo-abajo">
+          A pesar de la distancia, siento que no se pierde esa confianza que tenemos para contarnos las cosas y ser tal como somos.
+          Te quiero muchísimo y aunque a veces me cueste poner en palabras lo que siento por ti, trato de demostrártelo con cariño y
+          con los detalles o regalos que te he dado. Entiendo tus momentos difíciles y sé que tienes tu vida aparte, pero quiero que aun así yo quiero ser parte de tu vida.
+          La confianza que hemos construido con el tiempo y todo lo que ha pasado entre nosotros nos acerca de una forma que va más allá de lo que se puede expresar: más cerca que un abrazo, más cerca que unos mimos, caricias o besos.
+          Quiero seguir mejorando para que estés con una mejor versión de mí, que sea constante, pero sin dejar de ser quien soy y no porque quiera parecer perfecto ante tus ojos, sino porque tu mereces que dé lo mejor de mí.<br><br>
+          FELI PUMPEEEE, pásala de eggs hoi con tus amijos y espero q este día lo tomes bien y si me lo permites, estaré contigo en cada cumpleaños q pueda :D<br><br>
+          Teamobitch jeje<br>
+          teamocomonotienesidea
+        </p>
+
+        <!-- Imagen debajo del párrafo central -->
+        <img src="img/centro_abajo.jpg" alt="Foto central inferior" class="foto-centro">
+      </section>
+    </div>
+
+    <!-- Margen derecho (5 fotos chuecas) -->
+    <aside class="margen-fotos margen-der" aria-label="Fotos laterales derechas">
+      <img src="img/der_1.jpeg" alt="Foto derecha 1" class="foto-lateral chueca-der-1">
+      <img src="img/der_2.jpeg" alt="Foto derecha 2" class="foto-lateral chueca-der-2">
+      <img src="img/der_3.jpg" alt="Foto derecha 3" class="foto-lateral chueca-der-3">
+      <img src="img/der_4.jpeg" alt="Foto derecha 4" class="foto-lateral chueca-der-4">
+      <img src="img/der_5.jpeg" alt="Foto derecha 5" class="foto-lateral chueca-der-5">
+    </aside>
+
+  </div>
+
+  <!-- Librería real de confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      const overlay = document.getElementById("pantallaInicio");
+      if (!overlay) return;
+      overlay.addEventListener("click", function () {
+        overlay.classList.add("oculto");
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+        setTimeout(() => { overlay.style.display = "none"; }, 600);
+      }, { once: true });
+    })();
+  </script>
+</body>
+</html>
